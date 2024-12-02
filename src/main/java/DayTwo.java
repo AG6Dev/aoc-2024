@@ -53,7 +53,7 @@ public class DayTwo {
 
         for (int i = 0; i < in.length; i++) {
             int[] newArray = removeIndexFromArray(in, i);
-            if (isSafe(newArray)){
+            if (isSafe(newArray)) {
                 return true;
             }
         }
@@ -63,13 +63,8 @@ public class DayTwo {
     public static int[] removeIndexFromArray(int[] in, int index) {
         int[] newArray = new int[in.length - 1];
 
-        if (index >= 0) {
-            System.arraycopy(in, 0, newArray, 0, index);
-        }
-
-        if (in.length - 1 - index >= 0) {
-            System.arraycopy(in, index + 1, newArray, index, in.length - 1 - index);
-        }
+        System.arraycopy(in, 0, newArray, 0, index);
+        System.arraycopy(in, index + 1, newArray, index, in.length - 1 - index);
 
         return newArray;
     }
